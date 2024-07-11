@@ -1,6 +1,6 @@
 
 <p align="center"><h1 align="center">
-  buzz-desktop
+  ding
 </h1>
 
 <p align="center">
@@ -8,12 +8,12 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.org/package/buzz-desktop"><img src="https://badgen.net/npm/v/buzz-desktop" alt="npm version"/></a>
-  <a href="https://www.npmjs.org/package/buzz-desktop"><img src="https://badgen.net/npm/license/buzz-desktop" alt="license"/></a>
-  <a href="https://www.npmjs.org/package/buzz-desktop"><img src="https://badgen.net/npm/dt/buzz-desktop" alt="downloads"/></a>
-  <a href="https://github.com/lirantal/buzz-desktop/actions?workflow=CI"><img src="https://github.com/lirantal/buzz-desktop/workflows/CI/badge.svg" alt="build"/></a>
-  <a href="https://codecov.io/gh/lirantal/buzz-desktop"><img src="https://badgen.net/codecov/c/github/lirantal/buzz-desktop" alt="codecov"/></a>
-  <a href="https://snyk.io/test/github/lirantal/buzz-desktop"><img src="https://snyk.io/test/github/lirantal/buzz-desktop/badge.svg" alt="Known Vulnerabilities"/></a>
+  <a href="https://www.npmjs.org/package/ding"><img src="https://badgen.net/npm/v/ding" alt="npm version"/></a>
+  <a href="https://www.npmjs.org/package/ding"><img src="https://badgen.net/npm/license/ding" alt="license"/></a>
+  <a href="https://www.npmjs.org/package/ding"><img src="https://badgen.net/npm/dt/ding" alt="downloads"/></a>
+  <a href="https://github.com/lirantal/ding/actions?workflow=CI"><img src="https://github.com/lirantal/ding/workflows/CI/badge.svg" alt="build"/></a>
+  <a href="https://codecov.io/gh/lirantal/ding"><img src="https://badgen.net/codecov/c/github/lirantal/ding" alt="codecov"/></a>
+  <a href="https://snyk.io/test/github/lirantal/ding"><img src="https://snyk.io/test/github/lirantal/ding/badge.svg" alt="Known Vulnerabilities"/></a>
   <a href="./SECURITY.md"><img src="https://img.shields.io/badge/Security-Responsible%20Disclosure-yellow.svg" alt="Responsible Disclosure Policy" /></a>
 </p>
 
@@ -24,14 +24,14 @@ display notification on macOS desktop
 # Install
 
 ```bash
-npm install --save buzz-desktop
+npm install --save ding
 ```
 
 # Usage
 
 ```js
 // @TODO
-const {} = require('buzz-desktop')
+const {} = require('ding')
 ```
 
 # Example
@@ -44,4 +44,4 @@ Please consult [CONTRIBUTING](./CONTRIBUTING.md) for guidelines on contributing 
 
 # Author
 
-**buzz-desktop** © [Liran Tal](https://github.com/lirantal), Released under the [Apache-2.0](./LICENSE) License.
+**ding** © [Liran Tal](https://github.com/lirantal), Released under the [Apache-2.0](./LICENSE) License.

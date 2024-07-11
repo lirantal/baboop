@@ -3,7 +3,7 @@
   "changelog": [
         "@changesets/changelog-github",
         {
-            "repo": "lirantal/buzz-desktop"
+            "repo": "lirantal/ding"
         }
     ],
   "commit": false,
