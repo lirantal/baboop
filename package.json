@@ -23,7 +23,7 @@
     "format": "prettier --config .prettierrc.json --write '**/*.js'",
     "test": "c8 node --test __tests__/**",
     "test:watch": "c8 node --test --watch __tests__/**",
-    "coverage:view": "open-cli coverage/lcov-report/index.html",
+    "coverage:view": "open coverage/lcov-report/index.html",
     "semantic-release": "npx semantic-release",
     "prepare": "husky install && chmod 755 .husky/*",
     "lint:lockfile": "lockfile-lint --path package-lock.json --validate-https --allowed-hosts npm yarn"
@@ -65,7 +65,6 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
     "lockfile-lint": "^4.10.0",
-    "open-cli": "^7.1.0",
     "prettier": "^2.8.3"
   },
   "lint-staged": {
