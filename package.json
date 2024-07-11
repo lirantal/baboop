@@ -20,12 +20,13 @@
   "scripts": {
     "lint": "eslint . && npm run lint:lockfile",
     "lint:fix": "eslint . --fix",
+    "lint:lockfile": "lockfile-lint --path package-lock.json --validate-https --allowed-hosts npm yarn",
     "test": "c8 node --test __tests__/**",
     "test:watch": "c8 node --test --watch __tests__/**",
     "coverage:view": "open coverage/lcov-report/index.html",
-    "semantic-release": "npx semantic-release",
     "prepare": "husky install && chmod 755 .husky/*",
-    "lint:lockfile": "lockfile-lint --path package-lock.json --validate-https --allowed-hosts npm yarn"
+    "version": "changeset version",
+    "release": "changeset publish"
   },
   "author": {
     "name": "Liran Tal",
@@ -45,14 +46,10 @@
     "url": "https://github.com/lirantal/buzz-desktop.git"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.7",
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/commit-analyzer": "^13.0.0",
-    "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^10.1.0",
-    "@semantic-release/npm": "^12.0.1",
-    "@semantic-release/release-notes-generator": "^14.0.1",
     "c8": "^10.1.2",
     "eslint": "^9.6.0",
     "eslint-plugin-n": "^17.9.0",
@@ -81,48 +78,5 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
-  },
-  "release": {
-    "branches": [
-      "main",
-      "master"
-    ],
-    "analyzeCommits": {
-      "preset": "angular",
-      "releaseRules": [
-        {
-          "type": "docs",
-          "release": "patch"
-        },
-        {
-          "type": "refactor",
-          "release": "patch"
-        },
-        {
-          "type": "style",
-          "release": "patch"
-        }
-      ]
-    }
-  },
-  "plugins": [
-    "@semantic-release/commit-analyzer",
-    "@semantic-release/release-notes-generator",
-    [
-      "@semantic-release/changelog",
-      {
-        "changelogFile": "CHANGELOG.md"
-      }
-    ],
-    "@semantic-release/npm",
-    [
-      "@semantic-release/git",
-      {
-        "assets": [
-          "CHANGELOG.md"
-        ]
-      }
-    ],
-    "@semantic-release/github"
-  ]
+  }
 }
