@@ -33,7 +33,7 @@ about: Create a bug report
 ## Context
 
 <!--- How has this issue affected you? What are you trying to accomplish? -->
-<!--- Providing context helps us come up with a solution that is most useful in the real world -->
+<!--- Provibaboop context helps us come up with a solution that is most useful in the real world -->
 
 ## Your Environment
 

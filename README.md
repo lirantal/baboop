@@ -1,6 +1,6 @@
 
 <p align="center"><h1 align="center">
-  ding
+  baboop
 </h1>
 
 <p align="center">
@@ -8,12 +8,12 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.org/package/ding"><img src="https://badgen.net/npm/v/ding" alt="npm version"/></a>
-  <a href="https://www.npmjs.org/package/ding"><img src="https://badgen.net/npm/license/ding" alt="license"/></a>
-  <a href="https://www.npmjs.org/package/ding"><img src="https://badgen.net/npm/dt/ding" alt="downloads"/></a>
-  <a href="https://github.com/lirantal/ding/actions?workflow=CI"><img src="https://github.com/lirantal/ding/workflows/CI/badge.svg" alt="build"/></a>
-  <a href="https://codecov.io/gh/lirantal/ding"><img src="https://badgen.net/codecov/c/github/lirantal/ding" alt="codecov"/></a>
-  <a href="https://snyk.io/test/github/lirantal/ding"><img src="https://snyk.io/test/github/lirantal/ding/badge.svg" alt="Known Vulnerabilities"/></a>
+  <a href="https://www.npmjs.org/package/baboop"><img src="https://badgen.net/npm/v/baboop" alt="npm version"/></a>
+  <a href="https://www.npmjs.org/package/baboop"><img src="https://badgen.net/npm/license/baboop" alt="license"/></a>
+  <a href="https://www.npmjs.org/package/baboop"><img src="https://badgen.net/npm/dt/baboop" alt="downloads"/></a>
+  <a href="https://github.com/lirantal/baboop/actions?workflow=CI"><img src="https://github.com/lirantal/baboop/workflows/CI/badge.svg" alt="build"/></a>
+  <a href="https://codecov.io/gh/lirantal/baboop"><img src="https://badgen.net/codecov/c/github/lirantal/baboop" alt="codecov"/></a>
+  <a href="https://snyk.io/test/github/lirantal/baboop"><img src="https://snyk.io/test/github/lirantal/baboop/badge.svg" alt="Known Vulnerabilities"/></a>
   <a href="./SECURITY.md"><img src="https://img.shields.io/badge/Security-Responsible%20Disclosure-yellow.svg" alt="Responsible Disclosure Policy" /></a>
 </p>
 
@@ -24,14 +24,14 @@ display notification on macOS desktop
 # Install
 
 ```bash
-npm install --save ding
+npm install --save baboop
 ```
 
 # Usage
 
 ```js
 // @TODO
-const {} = require('ding')
+const {} = require('baboop')
 ```
 
 # Example
@@ -44,4 +44,4 @@ Please consult [CONTRIBUTING](./CONTRIBUTING.md) for guidelines on contributing 
 
 # Author
 
-**ding** © [Liran Tal](https://github.com/lirantal), Released under the [Apache-2.0](./LICENSE) License.
+**baboop** © [Liran Tal](https://github.com/lirantal), Released under the [Apache-2.0](./LICENSE) License.

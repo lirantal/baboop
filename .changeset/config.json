@@ -3,7 +3,7 @@
   "changelog": [
         "@changesets/changelog-github",
         {
-            "repo": "lirantal/ding"
+            "repo": "lirantal/baboop"
         }
     ],
   "commit": false,

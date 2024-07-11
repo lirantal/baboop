@@ -16,4 +16,4 @@ If you discover a security vulnerability, please use one of the following means 
 
 - Report the security issue to the [Snyk Security Team](https://snyk.io/vulnerability-disclosure). They will help triage the security issue and work with all involved parties to remediate and release a fix.
 
-We sincerely appreciate your efforts to responsibly disclose your findings with us.
+We sincerely appreciate your efforts to responsibly disclose your finbaboops with us.

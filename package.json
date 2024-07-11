@@ -1,5 +1,5 @@
 {
-  "name": "ding",
+  "name": "baboop",
   "version": "0.0.0-development",
   "description": "display notification on macOS desktop",
   "main": "main.js",
@@ -37,13 +37,13 @@
   "keywords": [
     "display notification macos notify show applescript notifier"
   ],
-  "homepage": "https://github.com/lirantal/ding",
+  "homepage": "https://github.com/lirantal/baboop",
   "bugs": {
-    "url": "https://github.com/lirantal/ding/issues"
+    "url": "https://github.com/lirantal/baboop/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lirantal/ding.git"
+    "url": "https://github.com/lirantal/baboop.git"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.0",
