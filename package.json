@@ -20,7 +20,6 @@
   "scripts": {
     "lint": "eslint . && npm run lint:lockfile",
     "lint:fix": "eslint . --fix",
-    "format": "prettier --config .prettierrc.json --write '**/*.js'",
     "test": "c8 node --test __tests__/**",
     "test:watch": "c8 node --test --watch __tests__/**",
     "coverage:view": "open coverage/lcov-report/index.html",
@@ -65,7 +64,7 @@
   },
   "lint-staged": {
     "**/*.{js,json}": [
-      "npm run format"
+      "npm run lint:fix"
     ]
   },
   "husky": {
