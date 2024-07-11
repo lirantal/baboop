@@ -104,8 +104,7 @@
   "eslintConfig": {
     "plugins": [
       "node",
-      "security",
-      "jest"
+      "security"
     ],
     "extends": [
       "plugin:node/recommended"
