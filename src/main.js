@@ -8,8 +8,6 @@ export async function runCommandAndNotify (commandToRun) {
       return reject(new Error('Please provide a command to run.'))
     }
 
-    console.log(`Running command: ${commandToRun}`)
-
     const child = spawn(commandToRun, { shell: true, stdio: 'inherit' })
 
     child.on('exit', async (code) => {
