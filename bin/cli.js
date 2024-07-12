@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import { add } from '../src/main.js'
+import { runCommandAndNotify } from '../src/main.js'
 
-console.log(add(1, 2))
+const commandToRun = process.argv.slice(2).join(' ')
+await runCommandAndNotify(commandToRun)
