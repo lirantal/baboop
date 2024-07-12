@@ -1,6 +1,4 @@
-import { promisify } from 'node:util'
-import { spawn, execFile } from 'node:child_process'
-const execFilePromise = promisify(execFile)
+import ChildProcess from 'node:child_process'
 
 export async function runCommandAndNotify (commandToRun) {
   return new Promise((resolve, reject) => {
@@ -8,7 +6,7 @@ export async function runCommandAndNotify (commandToRun) {
       return reject(new Error('Please provide a command to run.'))
     }
 
-    const child = spawn(commandToRun, { shell: true, stdio: 'inherit' })
+    const child = ChildProcess.spawn(commandToRun, { shell: true, stdio: 'inherit' })
 
     child.on('exit', async (code) => {
       try {
@@ -19,17 +17,21 @@ export async function runCommandAndNotify (commandToRun) {
         const notificationCommand = 'osascript'
         const notificationCommandArguments = ['-e', `display notification "Finished ${exitStatus}" with title "${programName}"`]
 
-        const { stdout, stderr } = await execFilePromise(notificationCommand, notificationCommandArguments)
+        ChildProcess.execFile(notificationCommand, notificationCommandArguments, (error, stdout, stderr) => {
+          if (error) {
+            return reject(error)
+          }
 
-        return resolve({
-          notification: {
-            stdout,
-            stderr,
-          },
-          program: {
-            name: programName,
-            code,
-          },
+          return resolve({
+            notification: {
+              stdout,
+              stderr,
+            },
+            program: {
+              name: programName,
+              code,
+            },
+          })
         })
       } catch (error) {
         return reject(error)
