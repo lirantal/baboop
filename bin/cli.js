@@ -1,5 +1,9 @@
 #!/usr/bin/env node
+import { debuglog } from 'node:util'
 import { runCommandAndNotify } from '../src/main.js'
 
+const debug = debuglog('baboop')
+
 const commandToRun = process.argv.slice(2).join(' ')
-await runCommandAndNotify(commandToRun)
+const result = await runCommandAndNotify(commandToRun)
+debug(result)
