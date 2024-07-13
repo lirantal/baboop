@@ -20,3 +20,4 @@ jobs:
           #config_file: .github/.markdownlint.yml
           exclude: |
             .changeset/
+            .github/
