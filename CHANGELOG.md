@@ -1,6 +1,6 @@
 # baboop
 
-## 0.0.0
+## 1.0.0
 
 ### Major Changes
 
