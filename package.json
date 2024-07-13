@@ -1,6 +1,6 @@
 {
   "name": "baboop",
-  "version": "0.0.0-development",
+  "version": "0.0.0",
   "description": "display notification on macOS desktop",
   "main": "main.js",
   "bin": {
