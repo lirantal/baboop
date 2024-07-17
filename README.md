@@ -18,31 +18,42 @@
   <a href="./SECURITY.md"><img src="https://img.shields.io/badge/Security-Responsible%20Disclosure-yellow.svg" alt="Responsible Disclosure Policy" /></a>
 </p>
 
-# About
+# Baboop
 
 display notification on macOS desktop
 
-# Install
+## Install
 
 ```bash
 npm install --save baboop
 ```
+## Usage: CLI
 
-# Usage
+Will display a macOS notification with the name `ls -alh` once the `ls` command finished running:
 
-```js
-// @TODO
-const {} = require('baboop')
+```bash
+npx baboop ls -alh
 ```
 
-# Example
+## Usage: API
 
-<!-- TODO -->
+```js
+import { runCommandAndNotify } from 'baboop'
 
-# Contributing
+async function init() {
+  const commandToRun = 'ls -alh';
+  const result = await runCommandAndNotify(commandToRun)
+}
+
+init();
+// will display a macOS notification with the name `ls -alh`
+// once the `ls` command finished running
+```
+
+## Contributing
 
 Please consult [CONTRIBUTING](./CONTRIBUTING.md) for guidelines on contributing to this project.
 
-# Author
+## Author
 
 **baboop** © [Liran Tal](https://github.com/lirantal), Released under the [Apache-2.0](./LICENSE) License.
