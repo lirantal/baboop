@@ -28,7 +28,7 @@
     "bin"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "tsc && tsup",
     "lint": "eslint . && npm run lint:lockfile",
     "lint:fix": "eslint . --fix",
     "lint:lockfile": "lockfile-lint --path package-lock.json --validate-https --allowed-hosts npm yarn",

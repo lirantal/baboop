@@ -3,7 +3,7 @@
     "lib": [
       "ESNext"
     ],
-    "strict": false,
+    "strict": true,
     "allowJs": true,
     "esModuleInterop": true,
     "skipLibCheck": true,

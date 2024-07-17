@@ -1,6 +1,6 @@
 import ChildProcess from 'node:child_process'
 
-export async function runCommandAndNotify (commandToRun) {
+export async function runCommandAndNotify (commandToRun: CommandToRun): Promise<RunCommandResult> {
   return new Promise((resolve, reject) => {
     if (!commandToRun) {
       return reject(new Error('Please provide a command to run.'))
@@ -8,7 +8,7 @@ export async function runCommandAndNotify (commandToRun) {
 
     const child = ChildProcess.spawn(commandToRun, { shell: true, stdio: 'inherit' })
 
-    child.on('exit', async (code) => {
+    child.on('exit', async (code: number | null) => {
       try {
         const programName = commandToRun
         const exitStatus = code === 0 ? 'successfully ✅' : `with failure ${code} ❌`
@@ -24,12 +24,12 @@ export async function runCommandAndNotify (commandToRun) {
 
           return resolve({
             notification: {
-              stdout,
-              stderr,
+              stdout: stdout.toString(),
+              stderr: stderr.toString(),
             },
             program: {
               name: programName,
-              code,
+              code: code ?? 1,
             },
           })
         })
@@ -43,3 +43,22 @@ export async function runCommandAndNotify (commandToRun) {
     })
   })
 }
+
+// Define the structure of the resolve object
+interface NotificationResult {
+  stdout: string;
+  stderr: string;
+}
+
+interface ProgramResult {
+  name: string;
+  code: number;
+}
+
+interface RunCommandResult {
+  notification: NotificationResult;
+  program: ProgramResult;
+}
+
+// Define the type for the command to run
+type CommandToRun = string;
