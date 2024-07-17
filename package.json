@@ -52,7 +52,8 @@
   },
   "license": "Apache-2.0",
   "keywords": [
-    "display notification macos notify show applescript notifier"
+    "display", "notification", "macos", "notify", "show", "applescript", "notifier",
+    "osascript", "display notification", "macos notification", "macos desktop"
   ],
   "homepage": "https://github.com/lirantal/baboop",
   "bugs": {
