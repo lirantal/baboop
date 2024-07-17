@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { debuglog } from 'node:util'
-import { runCommandAndNotify } from '../main.ts'
+import { runCommandAndNotify } from '../main.js'
 
 const debug = debuglog('baboop')
 

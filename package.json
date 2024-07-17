@@ -4,9 +4,7 @@
   "description": "display notification on macOS desktop",
   "types": "dist/main.d.ts",
   "type": "module",
-  "bin": {
-    "cli": "./dist/bin/cli.cjs"
-  },
+  "bin": "./dist/bin/cli.cjs",
   "exports": {
     ".": {
       "import": {
