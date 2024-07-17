@@ -1,4 +1,5 @@
 import ChildProcess from 'node:child_process'
+import { RunCommandResult, CommandToRun } from './main.types';
 
 export async function runCommandAndNotify (commandToRun: CommandToRun): Promise<RunCommandResult> {
   return new Promise((resolve, reject) => {
@@ -43,22 +44,3 @@ export async function runCommandAndNotify (commandToRun: CommandToRun): Promise<
     })
   })
 }
-
-// Define the structure of the resolve object
-interface NotificationResult {
-  stdout: string;
-  stderr: string;
-}
-
-interface ProgramResult {
-  name: string;
-  code: number;
-}
-
-interface RunCommandResult {
-  notification: NotificationResult;
-  program: ProgramResult;
-}
-
-// Define the type for the command to run
-type CommandToRun = string;
