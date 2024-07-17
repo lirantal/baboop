@@ -2,27 +2,40 @@
   "name": "baboop",
   "version": "1.0.0",
   "description": "display notification on macOS desktop",
-  "main": "main.js",
+  "types": "dist/main.d.ts",
+  "type": "module",
   "bin": {
-    "cli": "bin/cli.js"
+    "cli": "./dist/bin/cli.cjs"
   },
   "exports": {
-    ".": "./src/main.js"
+    ".": {
+      "import": {
+        "default": "./dist/main.mjs",
+        "types": "./dist/main.d.ts"
+      },
+      "require": {
+        "default": "./dist/main.cjs",
+        "types": "./dist/main.d.cts"
+      },
+      "default": "./dist/main.mjs"
+    }
   },
   "engines": {
     "node": ">=22.0.0"
   },
-  "type": "module",
+  "packageManager": "npm@8.4.0",
   "files": [
+    "dist",
     "src",
     "bin"
   ],
   "scripts": {
+    "build": "tsup",
     "lint": "eslint . && npm run lint:lockfile",
     "lint:fix": "eslint . --fix",
     "lint:lockfile": "lockfile-lint --path package-lock.json --validate-https --allowed-hosts npm yarn",
-    "test": "c8 node --test __tests__/**",
-    "test:watch": "c8 node --test --watch __tests__/**",
+    "test": "c8 node --loader ts-node/esm --test __tests__/**",
+    "test:watch": "c8 node --loader ts-node/esm --test --watch __tests__/**",
     "coverage:view": "open coverage/lcov-report/index.html",
     "prepare": "husky install && chmod 755 .husky/*",
     "version": "changeset version",
@@ -54,6 +67,7 @@
     "@changesets/cli": "^2.27.7",
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@types/node": "^20.14.10",
     "c8": "^10.1.2",
     "eslint": "^9.6.0",
     "eslint-plugin-n": "^17.9.0",
@@ -61,7 +75,10 @@
     "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
     "lockfile-lint": "^4.14.0",
-    "neostandard": "^0.11.0"
+    "neostandard": "^0.11.0",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.3"
   },
   "lint-staged": {
     "**/*.{js,json}": [

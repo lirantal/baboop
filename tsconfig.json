@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "ESNext"
+    ],
+    "strict": false,
+    "allowJs": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext",
+    "target": "ESNext",
+    "baseUrl": ".",
+    "rootDir": "./src",
+    "declaration": true,
+		"emitDeclarationOnly": true,
+		"allowImportingTsExtensions": true,
+    "allowSyntheticDefaultImports": true,
+		"forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "removeComments": true,
+  },
+  "include": [
+    "src/**/*",
+    "src/bin/**/*"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
+  ],
+  "ts-node": {
+    "transpileOnly": true,
+  }
+}
