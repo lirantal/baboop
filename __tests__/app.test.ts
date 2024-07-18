@@ -82,4 +82,17 @@ describe('CLI program', () => {
     mock.reset();
   })
 
+  test('CLI program fails to execute the `osascript` command and throws an error', async (t) => {
+    t.mock.method(ChildProcess, 'execFile', (cmd, args, callback) => {
+      callback(new Error('Failed to execute command'))
+    });
+
+    const commandToRun = 'ls'
+    await assert.rejects(async () => await runCommandAndNotify(commandToRun), {
+      message: 'Failed to execute command',
+    });
+    mock.reset();
+
+  });
+
 });

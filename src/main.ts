@@ -10,33 +10,29 @@ export async function runCommandAndNotify (commandToRun: CommandToRun): Promise<
     const child = ChildProcess.spawn(commandToRun, { shell: true, stdio: 'inherit' })
 
     child.on('exit', async (code: number | null) => {
-      try {
-        const programName = commandToRun
-        const exitStatus = code === 0 ? 'successfully ✅' : `with failure ${code} ❌`
+      const programName = commandToRun
+      const exitStatus = code === 0 ? 'successfully ✅' : `with failure ${code} ❌`
 
-        // Display a notification
-        const notificationCommand = 'osascript'
-        const notificationCommandArguments = ['-e', `display notification "Finished ${exitStatus}" with title "${programName}"`]
+      // Display a notification
+      const notificationCommand = 'osascript'
+      const notificationCommandArguments = ['-e', `display notification "Finished ${exitStatus}" with title "${programName}"`]
 
-        ChildProcess.execFile(notificationCommand, notificationCommandArguments, (error, stdout, stderr) => {
-          if (error) {
-            return reject(error)
-          }
+      ChildProcess.execFile(notificationCommand, notificationCommandArguments, (error, stdout, stderr) => {
+        if (error) {
+          return reject(error)
+        }
 
-          return resolve({
-            notification: {
-              stdout: stdout.toString(),
-              stderr: stderr.toString(),
-            },
-            program: {
-              name: programName,
-              code: code ?? 1,
-            },
-          })
+        return resolve({
+          notification: {
+            stdout: stdout.toString(),
+            stderr: stderr.toString(),
+          },
+          program: {
+            name: programName,
+            code: code ?? 1,
+          },
         })
-      } catch (error) {
-        return reject(error)
-      }
+      })
     })
 
     child.on('error', (error) => {
