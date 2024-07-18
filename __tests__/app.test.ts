@@ -92,7 +92,23 @@ describe('CLI program', () => {
       message: 'Failed to execute command',
     });
     mock.reset();
-
   });
 
+  test('CLI program fails to execute the command and throws an error', async (t) => {
+    mock.method(ChildProcess, 'spawn', () => {
+      return {
+        on: (event, callback) => {
+          if (event === 'error') {
+            callback(new Error('Failed to execute command'))
+          }
+        },
+      }
+    })
+
+    const commandToRun = 'ls'
+    await assert.rejects(async () => await runCommandAndNotify(commandToRun), {
+      message: 'Failed to execute command',
+    });
+    mock.reset();
+  });
 });
