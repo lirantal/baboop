@@ -1,15 +1,10 @@
 import nodePlugin from 'eslint-plugin-n'
 import pluginSecurity from 'eslint-plugin-security'
-import neostandard from 'neostandard'
+import neostandard, { resolveIgnoresFromGitignore } from 'neostandard'
 
 export default neostandard(
   {
-    ignores: [
-      'node_modules',
-      'dist',
-      'coverage/**',
-      '__tests__/**',
-    ],
+    ignores: resolveIgnoresFromGitignore(),
   },
   [
     nodePlugin.configs['flat/recommended-script'],
