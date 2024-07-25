@@ -35,7 +35,6 @@
     "test": "c8 node --loader ts-node/esm --test __tests__/**",
     "test:watch": "c8 node --loader ts-node/esm --test --watch __tests__/**",
     "coverage:view": "open coverage/lcov-report/index.html",
-    "prepare": "husky install && chmod 755 .husky/*",
     "version": "changeset version",
     "release": "changeset publish"
   },
@@ -83,16 +82,6 @@
     "**/*.{js,json}": [
       "npm run lint:fix"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint --env HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged",
-      "pre-push": "npm run lint && npm run test",
-      "post-commit": "git status",
-      "post-checkout": "git status",
-      "post-merge": "npm install"
-    }
   },
   "commitlint": {
     "extends": [
