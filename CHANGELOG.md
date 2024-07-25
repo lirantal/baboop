@@ -1,5 +1,11 @@
 # baboop
 
+## 1.0.2
+
+### Patch Changes
+
+- [`16d4c01`](https://github.com/lirantal/baboop/commit/16d4c01967cf3406cbd96ce335e4f36e8dc6d8ca) Thanks [@lirantal](https://github.com/lirantal)! - fix: project dist/ assets weren't bundled in
+
 ## 1.0.1
 
 ### Patch Changes
