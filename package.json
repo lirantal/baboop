@@ -1,6 +1,6 @@
 {
   "name": "baboop",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "display notification on macOS desktop",
   "types": "dist/main.d.ts",
   "type": "module",
