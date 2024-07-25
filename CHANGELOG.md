@@ -1,5 +1,11 @@
 # baboop
 
+## 1.0.1
+
+### Patch Changes
+
+- [`34ccaba`](https://github.com/lirantal/baboop/commit/34ccaba0747e5834db6eefacc18e8271a5ee47cf) Thanks [@lirantal](https://github.com/lirantal)! - fix: CLI binary locator and other updates
+
 ## 1.0.0
 
 ### Major Changes
