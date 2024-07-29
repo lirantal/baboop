@@ -14,7 +14,7 @@ to also toggle the `Read and write permission` option)
 
 ## How to release a new version of the package
 
-Step 1: Create a new changeset
+### Step 1: Create a new changeset
 
 ```sh
 npx changeset
@@ -23,7 +23,7 @@ npx changeset
 Follow the prompt to choose the major/minor/patch version and affected
 packages (if a monorepo).
 
-Step 2: Commit the changeset file(s) to the repository
+### Step 2: Commit the changeset file(s) to the repository
 
 ```sh
 git add .changeset/
@@ -31,12 +31,12 @@ git commit -m "chore: add changeset for release"
 git push origin HEAD
 ```
 
-Step 3: A new Pull Request for versioning
+### Step 3: A new Pull Request for versioning
 
 The Changesets GitHub Action will pick up the new changeset in the repository
 and open a new pull request with the versioning changes in the relevant package
 manifest files. Review the changes and merge the pull request.
 
-Step 4: Publish the package
+### Step 4: Publish the package
 
 The GitHub Action will automatically publish the package to the npm registry.

@@ -18,7 +18,7 @@ uphold this code.
 
 ### Tests
 
-Make sure the code you're adbaboop has decent test coverage.
+Make sure the code you're adding has decent test coverage.
 
 Running project tests and coverage:
 
