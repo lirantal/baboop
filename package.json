@@ -90,10 +90,5 @@
     "**/*.{js,json}": [
       "npm run lint:fix"
     ]
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
   }
 }
