@@ -1,42 +1,49 @@
 import ChildProcess from 'node:child_process'
-import { RunCommandResult, CommandToRun } from './main.types';
+import { RunCommandResult, CommandToRun } from './main.types'
 
-export async function runCommandAndNotify (commandToRun: CommandToRun): Promise<RunCommandResult> {
-  return new Promise((resolve, reject) => {
-    if (!commandToRun) {
-      return reject(new Error('Please provide a command to run.'))
-    }
+export async function runCommandAndNotify(commandToRun: CommandToRun): Promise<RunCommandResult> {
+  const { promise, resolve, reject } = Promise.withResolvers<RunCommandResult>()
 
-    const child = ChildProcess.spawn(commandToRun, { shell: true, stdio: 'inherit' })
+  if (!commandToRun) {
+    reject(new Error('Please provide a command to run.'))
+    return promise
+  }
 
-    child.on('exit', async (code: number | null) => {
-      const programName = commandToRun
-      const exitStatus = code === 0 ? 'successfully ✅' : `with failure ${code} ❌`
+  const child = ChildProcess.spawn(commandToRun, { shell: true, stdio: 'inherit' })
 
-      // Display a notification
-      const notificationCommand = 'osascript'
-      const notificationCommandArguments = ['-e', `display notification "Finished ${exitStatus}" with title "${programName}"`]
+  child.on('exit', async (code: number | null) => {
+    const programName = commandToRun
+    const exitStatus = code === 0 ? 'successfully ✅' : `with failure ${code} ❌`
 
-      ChildProcess.execFile(notificationCommand, notificationCommandArguments, (error, stdout, stderr) => {
-        if (error) {
-          return reject(error)
-        }
+    // Display a notification
+    const notificationCommand = 'osascript'
+    const notificationCommandArguments = ['-e', `display notification "Finished ${exitStatus}" with title "${programName}"`]
 
-        return resolve({
-          notification: {
-            stdout: stdout.toString(),
-            stderr: stderr.toString(),
-          },
-          program: {
-            name: programName,
-            code: code ?? 1,
-          },
-        })
+    ChildProcess.execFile(notificationCommand, notificationCommandArguments, (error, stdout, stderr) => {
+      if (error) {
+        reject(error)
+        return promise
+      }
+
+      resolve({
+        notification: {
+          stdout: stdout.toString(),
+          stderr: stderr.toString(),
+        },
+        program: {
+          name: programName,
+          code: code ?? 1,
+        },
       })
-    })
 
-    child.on('error', (error) => {
-      return reject(error)
+      return promise
     })
   })
+
+  child.on('error', (error) => {
+    reject(error)
+    return promise
+  })
+
+  return promise
 }
