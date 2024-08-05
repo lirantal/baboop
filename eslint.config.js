@@ -7,7 +7,6 @@ export default [
   pluginSecurity.configs.recommended,
   {
     rules: {
-      'no-process-exit': 'warn',
       'node/no-unsupported-features': 'off',
       'node/no-unpublished-require': 'off',
       'security/detect-non-literal-fs-filename': 'error',
@@ -21,8 +20,6 @@ export default [
       'security/detect-object-injection': 'warn',
       'security/detect-possible-timing-attacks': 'error',
       'security/detect-pseudoRandomBytes': 'error',
-      'space-before-function-paren': 'off',
-      'object-curly-spacing': 'off',
     },
     languageOptions: {
       ecmaVersion: 2024,
