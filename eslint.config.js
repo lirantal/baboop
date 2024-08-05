@@ -1,7 +1,14 @@
 import pluginSecurity from 'eslint-plugin-security'
 import neostandard, { resolveIgnoresFromGitignore, plugins } from 'neostandard'
+import eslint from '@eslint/js'
+import tseslint from 'typescript-eslint'
 
 export default [
+  ...tseslint.config(
+    eslint.configs.recommended,
+    ...tseslint.configs.recommended
+  ),
+  ...neostandard({ ignores: resolveIgnoresFromGitignore() }),
   {
     files: [
       '**/*.ts',
@@ -12,7 +19,7 @@ export default [
       '**/*.d.ts',
     ],
   },
-  ...neostandard({ ignores: resolveIgnoresFromGitignore() }),
+
   plugins.n.configs['flat/recommended-script'],
   pluginSecurity.configs.recommended,
   {

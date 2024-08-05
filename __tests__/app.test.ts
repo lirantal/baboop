@@ -9,7 +9,7 @@ describe('CLI program', () => {
     mock.reset()
   })
 
-  test('CLI doesnt receive any arguments to run and throws an error', async (t) => {
+  test('CLI doesnt receive any arguments to run and throws an error', async () => {
     await assert.rejects(async () => await runCommandAndNotify(), {
       message: 'Please provide a command to run.',
     })
@@ -20,7 +20,7 @@ describe('CLI program', () => {
     t.mock.method(ChildProcess, 'execFile', (cmd, args, callback) => {
       callback(null, 'stdout', 'stderr')
     })
-    const spy = t.mock.method(ChildProcess, 'spawn', (cmd) => {
+    const spy = t.mock.method(ChildProcess, 'spawn', () => {
       return {
         on: (event, callback) => {
           if (event === 'exit') {
@@ -42,7 +42,7 @@ describe('CLI program', () => {
     t.mock.method(ChildProcess, 'execFile', (cmd, args, callback) => {
       callback(null, 'stdout', 'stderr')
     })
-    const spy = t.mock.method(ChildProcess, 'spawn', (cmd) => {
+    const spy = t.mock.method(ChildProcess, 'spawn', () => {
       return {
         on: (event, callback) => {
           if (event === 'exit') {
@@ -64,7 +64,7 @@ describe('CLI program', () => {
     t.mock.method(ChildProcess, 'execFile', (cmd, args, callback) => {
       callback(null, 'stdout', 'stderr')
     })
-    const spy = mock.method(ChildProcess, 'spawn', (cmd) => {
+    const spy = mock.method(ChildProcess, 'spawn', () => {
       return {
         on: (event, callback) => {
           if (event === 'exit') {
@@ -93,7 +93,7 @@ describe('CLI program', () => {
     mock.reset()
   })
 
-  test('CLI program fails to execute the command and throws an error', async (t) => {
+  test('CLI program fails to execute the command and throws an error', async () => {
     mock.method(ChildProcess, 'spawn', () => {
       return {
         on: (event, callback) => {
