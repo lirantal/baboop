@@ -4,11 +4,10 @@ import { runCommandAndNotify } from '../src/main.ts'
 import ChildProcess from 'node:child_process'
 
 describe('CLI program', () => {
-
   beforeEach(() => {
     // Reset the mocks before each test
     mock.reset()
-  });
+  })
 
   test('CLI doesnt receive any arguments to run and throws an error', async (t) => {
     await assert.rejects(async () => await runCommandAndNotify(), {
@@ -35,7 +34,7 @@ describe('CLI program', () => {
     const result = await runCommandAndNotify(commandToRun)
     assert.strictEqual(spy.mock.calls.length, 1)
     assert.strictEqual(result.program.code, 0)
-    t.mock.reset();
+    t.mock.reset()
   })
 
   test('CLI program runs and completes with a failure', async (t) => {
@@ -57,7 +56,7 @@ describe('CLI program', () => {
     const result = await runCommandAndNotify(commandToRun)
     assert.strictEqual(spy.mock.calls.length, 1)
     assert.strictEqual(result.program.code, 1)
-    t.mock.reset();
+    t.mock.reset()
   })
 
   test('CLI program runs and completes successfully and uses a long program name', async (t) => {
@@ -79,20 +78,20 @@ describe('CLI program', () => {
     const result = await runCommandAndNotify(commandToRun)
     assert.strictEqual(spy.mock.calls.length, 1)
     assert.strictEqual(result.program.code, 0)
-    mock.reset();
+    mock.reset()
   })
 
   test('CLI program fails to execute the `osascript` command and throws an error', async (t) => {
     t.mock.method(ChildProcess, 'execFile', (cmd, args, callback) => {
       callback(new Error('Failed to execute command'))
-    });
+    })
 
     const commandToRun = 'ls'
     await assert.rejects(async () => await runCommandAndNotify(commandToRun), {
       message: 'Failed to execute command',
-    });
-    mock.reset();
-  });
+    })
+    mock.reset()
+  })
 
   test('CLI program fails to execute the command and throws an error', async (t) => {
     mock.method(ChildProcess, 'spawn', () => {
@@ -108,7 +107,7 @@ describe('CLI program', () => {
     const commandToRun = 'ls'
     await assert.rejects(async () => await runCommandAndNotify(commandToRun), {
       message: 'Failed to execute command',
-    });
-    mock.reset();
-  });
-});
+    })
+    mock.reset()
+  })
+})

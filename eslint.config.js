@@ -2,6 +2,16 @@ import pluginSecurity from 'eslint-plugin-security'
 import neostandard, { resolveIgnoresFromGitignore, plugins } from 'neostandard'
 
 export default [
+  {
+    files: [
+      '**/*.ts',
+      '**/*.js',
+      '**.*.mjs',
+    ],
+    ignores: [
+      '**/*.d.ts',
+    ],
+  },
   ...neostandard({ ignores: resolveIgnoresFromGitignore() }),
   plugins.n.configs['flat/recommended-script'],
   pluginSecurity.configs.recommended,
