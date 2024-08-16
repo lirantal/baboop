@@ -1,13 +1,13 @@
 export interface NotificationResult {
-    stdout: string;
-    stderr: string;
+  stdout: string;
+  stderr: string;
 }
 export interface ProgramResult {
-    name: string;
-    code: number;
+  name: string;
+  code: number;
 }
 export interface RunCommandResult {
-    notification: NotificationResult;
-    program: ProgramResult;
+  notification: NotificationResult;
+  program: ProgramResult;
 }
-export type CommandToRun = string;
+export type CommandToRun = string
