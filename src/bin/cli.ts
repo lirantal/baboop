@@ -1,5 +1,5 @@
 import { debuglog } from 'node:util'
-import { runCommandAndNotify } from '../main.js'
+import { runCommandAndNotify } from '../main.ts'
 
 const debug = debuglog('baboop')
 
