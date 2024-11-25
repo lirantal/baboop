@@ -1,5 +1,5 @@
 import ChildProcess from 'node:child_process'
-import { RunCommandResult, CommandToRun } from './main.types'
+import { RunCommandResult, CommandToRun } from './main.types.ts'
 
 export async function runCommandAndNotify (commandToRun: CommandToRun): Promise<RunCommandResult> {
   return new Promise((resolve, reject) => {
