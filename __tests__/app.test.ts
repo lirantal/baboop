@@ -10,7 +10,7 @@ describe('CLI program', () => {
   })
 
   test('CLI doesnt receive any arguments to run and throws an error', async () => {
-    await assert.rejects(async () => await runCommandAndNotify(), {
+    await assert.rejects(async () => await runCommandAndNotify('dir'), {
       message: 'Please provide a command to run.',
     })
   })
