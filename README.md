@@ -46,6 +46,7 @@ async function init() {
 }
 
 init();
+//
 // will display a macOS notification with the name `ls -alh`
 // once the `ls` command finished running
 ```
