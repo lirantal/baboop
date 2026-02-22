@@ -9,9 +9,9 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.org/package/baboop"><img src="https://badgen.net/npm/v/baboop" alt="npm version"/></a>
-  <a href="https://www.npmjs.org/package/baboop"><img src="https://badgen.net/npm/license/baboop" alt="license"/></a>
-  <a href="https://www.npmjs.org/package/baboop"><img src="https://badgen.net/npm/dt/baboop" alt="downloads"/></a>
+  <a href="https://www.npmjs.com/package/baboop"><img src="https://badgen.net/npm/v/baboop" alt="npm version"/></a>
+  <a href="https://www.npmjs.com/package/baboop"><img src="https://badgen.net/npm/license/baboop" alt="license"/></a>
+  <a href="https://www.npmjs.com/package/baboop"><img src="https://badgen.net/npm/dt/baboop" alt="downloads"/></a>
   <a href="https://github.com/lirantal/baboop/actions?workflow=CI"><img src="https://github.com/lirantal/baboop/workflows/CI/badge.svg" alt="build"/></a>
   <a href="https://codecov.io/gh/lirantal/baboop"><img src="https://badgen.net/codecov/c/github/lirantal/baboop" alt="codecov"/></a>
   <a href="https://snyk.io/test/github/lirantal/baboop"><img src="https://snyk.io/test/github/lirantal/baboop/badge.svg" alt="Known Vulnerabilities"/></a>
