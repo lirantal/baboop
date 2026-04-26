@@ -14,7 +14,6 @@
   <a href="https://www.npmjs.com/package/baboop"><img src="https://badgen.net/npm/dt/baboop" alt="downloads"/></a>
   <a href="https://github.com/lirantal/baboop/actions?workflow=CI"><img src="https://github.com/lirantal/baboop/workflows/CI/badge.svg" alt="build"/></a>
   <a href="https://app.codecov.io/gh/lirantal/baboop"><img src="https://badgen.net/codecov/c/github/lirantal/baboop" alt="codecov"/></a>
-  <a href="https://snyk.io/test/github/lirantal/baboop"><img src="https://snyk.io/test/github/lirantal/baboop/badge.svg" alt="Known Vulnerabilities"/></a>
   <a href="./SECURITY.md"><img src="https://img.shields.io/badge/Security-Responsible%20Disclosure-yellow.svg" alt="Responsible Disclosure Policy" /></a>
 </p>
 
