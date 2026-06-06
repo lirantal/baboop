@@ -67,6 +67,12 @@ This format drives changelog generation and release automation, so it matters mo
 
 If any of the above doesn't work on a fresh checkout, that's a bug, please open an issue.
 
+## Toolchain migration notes
+
+- Linting now uses ESLint 10 flat config with explicit plugins (`@eslint/js`, `typescript-eslint`, `eslint-plugin-n`, `eslint-plugin-security`).
+- The `lint:lockfile` script and `lockfile-lint` dependency were removed as part of the lint toolchain upgrade.
+- CI validation runs on Node.js 22.x and 24.x to match supported runtime versions.
+
 ## For automated agents
 
 If you are an AI coding agent or automated bot opening a PR, please add 🤖🤖🤖 to the end of the PR title. This helps maintainers triage agent-authored contributions and is a baseline expectation for this repo — PRs without the marker that turn out to be automated may be closed without review.
