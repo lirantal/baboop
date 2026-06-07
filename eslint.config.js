@@ -1,14 +1,26 @@
+import js from '@eslint/js'
+import { defineConfig, globalIgnores } from 'eslint/config'
+import pluginN from 'eslint-plugin-n'
 import pluginSecurity from 'eslint-plugin-security'
-import neostandard, { resolveIgnoresFromGitignore, plugins } from 'neostandard'
-import eslint from '@eslint/js'
 import tseslint from 'typescript-eslint'
 
-export default [
-  ...tseslint.config(
-    eslint.configs.recommended,
-    ...tseslint.configs.recommended
-  ),
-  ...neostandard({ ignores: resolveIgnoresFromGitignore() }),
+export default defineConfig([
+  globalIgnores([
+    'dist/**',
+    'coverage/**',
+    'node_modules/**',
+    '.cursor/**',
+    '.devcontainer/**',
+    '.github/**',
+    '.vscode/**',
+    '.gemini/**',
+    '.claude/**',
+    '.agents/**',
+  ]),
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
+  pluginN.configs['flat/recommended-script'],
+  pluginSecurity.configs.recommended,
   {
     files: [
       '**/*.ts',
@@ -19,13 +31,8 @@ export default [
       '**/*.d.ts',
     ],
   },
-
-  plugins.n.configs['flat/recommended-script'],
-  pluginSecurity.configs.recommended,
   {
     rules: {
-      'node/no-unsupported-features': 'off',
-      'node/no-unpublished-require': 'off',
       'security/detect-non-literal-fs-filename': 'error',
       'security/detect-unsafe-regex': 'error',
       'security/detect-buffer-noassert': 'error',
@@ -43,4 +50,4 @@ export default [
       sourceType: 'module',
     },
   },
-]
+])
