@@ -94,5 +94,6 @@
     "**/*.{js,json}": [
       "npm run lint:fix"
     ]
-  }
+  },
+  "packageManager": "npm@11.21.0"
 }
