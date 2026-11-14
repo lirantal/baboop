@@ -85,7 +85,7 @@
     "husky": "^9.0.11",
     "lint-staged": "^17.0.2",
     "ts-node": "^10.9.2",
-    "tsup": "^8.1.0",
+    "tsup": "^9.0.0",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.59.0",
     "validate-conventional-commit": "^2.0.0"
